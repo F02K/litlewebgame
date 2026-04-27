@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Mario – 10 Level (Phaser)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <h1>Mini Mario Browser Spiel</h1>
+    <p>
+      Läuft rein im Browser mit <strong>HTML/CSS/JS</strong> (ohne Node.js).<br />
+      Steuerung: <strong>A/D</strong> oder <strong>←/→</strong>, Springen mit
+      <strong>W</strong>/<strong>↑</strong>/<strong>Leertaste</strong>, <strong>R</strong> für Level-Neustart.
+    </p>
+
+    <div class="hud">
+      <span id="levelInfo">Level: 1 / 10</span>
+      <span id="livesInfo">Leben: 3</span>
+      <span id="coinInfo">Münzen: 0</span>
+    </div>
+
+    <div id="game" aria-label="2D Jump and Run Spielfeld"></div>
+    <p id="message"></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
