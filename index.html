@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arena Blaster Multiplayer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <h1>Arena Blaster (Multiplayer)</h1>
+    <p>
+      Kompetitives 2D Shooter-Spiel. Frontend kann auf GitHub Pages laufen,
+      Multiplayer läuft über einen separaten WebSocket-Server.
+    </p>
+
+    <section class="connect-row">
+      <label for="serverUrl">Server URL:</label>
+      <input id="serverUrl" type="text" value="ws://localhost:8080" />
+      <input id="playerName" type="text" maxlength="16" placeholder="Name" value="Spieler" />
+      <button id="connectBtn">Verbinden</button>
+    </section>
+
+    <div class="hud">
+      <span id="statusInfo">Status: getrennt</span>
+      <span id="pingInfo">Ping: -</span>
+      <span id="scoreInfo">Score: 0</span>
+      <span id="hpInfo">HP: 100</span>
+    </div>
+
+    <canvas id="game" width="960" height="540"></canvas>
+
+    <p class="help">
+      Steuerung: <strong>WASD</strong> bewegen, <strong>Maus</strong> zielen,
+      <strong>Linksklick</strong> schießen.
+    </p>
+    <p id="message"></p>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
