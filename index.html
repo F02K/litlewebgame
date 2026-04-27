@@ -3,40 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arena Blaster Multiplayer</title>
+  <title>Mini Mario – 10 Level (Phaser)</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="game-shell">
-    <h1>Arena Blaster (Multiplayer)</h1>
+    <h1>Mini Mario Browser Spiel</h1>
     <p>
-      Kompetitives 2D Shooter-Spiel. Frontend kann auf GitHub Pages laufen,
-      Multiplayer läuft über einen separaten WebSocket-Server.
+      Läuft rein im Browser mit <strong>HTML/CSS/JS</strong> (ohne Node.js).<br />
+      Steuerung: <strong>A/D</strong> oder <strong>←/→</strong>, Springen mit
+      <strong>W</strong>/<strong>↑</strong>/<strong>Leertaste</strong>, <strong>R</strong> für Level-Neustart.
     </p>
-
-    <section class="connect-row">
-      <label for="serverUrl">Server URL:</label>
-      <input id="serverUrl" type="text" value="ws://localhost:8080" />
-      <input id="playerName" type="text" maxlength="16" placeholder="Name" value="Spieler" />
-      <button id="connectBtn">Verbinden</button>
-    </section>
 
     <div class="hud">
-      <span id="statusInfo">Status: getrennt</span>
-      <span id="pingInfo">Ping: -</span>
-      <span id="scoreInfo">Score: 0</span>
-      <span id="hpInfo">HP: 100</span>
+      <span id="levelInfo">Level: 1 / 10</span>
+      <span id="livesInfo">Leben: 3</span>
+      <span id="coinInfo">Münzen: 0</span>
     </div>
 
-    <canvas id="game" width="960" height="540"></canvas>
-
-    <p class="help">
-      Steuerung: <strong>WASD</strong> bewegen, <strong>Maus</strong> zielen,
-      <strong>Linksklick</strong> schießen.
-    </p>
+    <div id="game" aria-label="2D Jump and Run Spielfeld"></div>
     <p id="message"></p>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

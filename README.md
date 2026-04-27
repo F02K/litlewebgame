@@ -1,52 +1,33 @@
-# Arena Blaster Multiplayer
+# Mini Mario Browser Spiel (10 Level)
 
-Ein simples kompetitives 2D Shooter-Spiel.
+Mario-ähnliches 2D Jump-and-Run mit **10 vollständigen Leveln**.
 
-## Wichtige Antwort auf deine Frage
+## Technologie
 
-**Ja, teilweise:**
-- **GitHub Pages** kann nur das **Frontend** hosten (HTML/CSS/JS).
-- Für **echten Multiplayer** brauchst du zusätzlich einen **separaten WebSocket-Server**.
+- Nur **HTML, CSS und JavaScript**
+- Keine Node.js-Installation nötig
+- Verwendet die Browser-Library **Phaser 3** direkt per CDN
 
-Dieses Repo ist deshalb aufgeteilt in:
-- `index.html`, `styles.css`, `game.js` → Frontend (für GitHub Pages)
-- `server/server.js` → Multiplayer-Server (Node.js + ws)
+## Start (lokal)
 
-## Features
-
-- Echtzeit-Multiplayer via WebSocket
-- WASD-Movement, Maus-Aim, Klick zum Schießen
-- HP, Score, Respawn, Kill-Feed
-- Simples Arena-Design
-
-## 1) Server starten (Backend)
+1. Datei `index.html` im Browser öffnen.
+2. Optional über einen einfachen lokalen Server starten (nicht zwingend):
 
 ```bash
-cd server
-npm install
-npm start
+python -m http.server 8080
 ```
 
-Standard-Port: `8080`.
+Dann `http://localhost:8080` aufrufen.
 
-## 2) Frontend lokal testen
+## Steuerung
 
-Im Projektroot z. B.:
+- `A / D` oder `← / →`: Laufen
+- `W`, `↑` oder `Leertaste`: Springen
+- `R`: Aktuelles Level neu starten
 
-```bash
-python -m http.server 5500
-```
+## Ziel
 
-Dann `http://localhost:5500` öffnen und `ws://localhost:8080` eintragen.
-
-## 3) GitHub Pages Deployment (Frontend)
-
-1. Repo auf GitHub pushen.
-2. In den Repo-Settings GitHub Pages aktivieren (Branch `main`, Ordner `/root`).
-3. Die veröffentlichte URL öffnen.
-4. Im Feld **Server URL** deinen produktiven WebSocket-Server eintragen, z. B. `wss://dein-server.example.com`.
-
-## 4) Backend Deployment Optionen
-
-Du kannst den `server/`-Ordner auf Plattformen wie Render, Fly.io, Railway oder einem VPS hosten.
-Wichtig: Für GitHub Pages musst du im Frontend dann `wss://...` nutzen (TLS).
+- Münzen sammeln
+- Gegnern ausweichen oder auf sie springen
+- In jedem Level die Zielflagge erreichen
+- Alle 10 Level schaffen
